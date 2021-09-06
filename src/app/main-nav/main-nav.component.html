@@ -4,21 +4,24 @@
       <a href="#">Thomas Dirven</a>
     </div>
     <div id="mainListDiv" class="main_list">
-      <ul class="navlinks">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Education</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Contact</a></li>
+      <ul class="navlinks menu" *ngIf="isDropDownNavOpen || innerWidth > innerWidthConstant" [@dropDownMenu]>
+        <li *ngFor="let navigationLink of navigationLinks"
+            (click)="toggleActiveClass()"
+            class="menu-item">
+          <a href="#">{{navigationLink}}</a>
+        </li>
       </ul>
     </div>
-    <span class="navTrigger">
+    <span class="navTrigger"
+          (click)="toggleActiveClass()">
         <i></i>
         <i></i>
         <i></i>
     </span>
   </div>
 </nav>
+
+<app-landing></app-landing>
 
 <section class="home">
 </section>
@@ -40,27 +43,3 @@
   </p>
 </div>
 
-<!-- Jquery needed -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="assets/libraries/http_ajax.googleapis.com_ajax_libs_jquery_3.1.1_jquery.js"></script>
-
-<!-- Function used to shrink nav bar removing paddings and adding black background -->
-<script>
-  $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-      $('.nav').addClass('affix');
-      console.log("OK");
-    } else {
-      $('.nav').removeClass('affix');
-    }
-  });
-
-
-  $('.navTrigger').click(function () {
-    $(this).toggleClass('active');
-    console.log("Clicked menu");
-    $("#mainListDiv").toggleClass("show_list");
-    $("#mainListDiv").fadeIn();
-
-  });
-</script>

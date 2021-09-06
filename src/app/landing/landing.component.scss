@@ -1,0 +1,80 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  //margin: 0;
+  //padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content:center;
+}
+
+//#particles-js canvas {
+//  display: flex;
+//  flex-direction: column;
+//  align-items:center;
+//  justify-content:center;
+//}
+
+.name-on-top{
+  z-index: 10;
+  position: absolute;
+  //margin: auto;
+  //left: 0;
+  //right: 0;
+  //top: 0;
+  //bottom: 0;
+  //transform: translate(50%, 50%);
+  text-align: center;
+  //width: fit-content;
+  //height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  user-select: none;
+}
+h1{
+  font-family: 'Righteous', sans-serif;
+  // color: white;
+  background:url('https://media1.giphy.com/media/3o6ZsVGl3vuG5g0Kic/giphy.gif?cid=790b7611e6bf609cf1d0f7431e72a9d43ad8ba5be8e26da3&rid=giphy.gif&ct=g') bottom;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:7rem;
+  letter-spacing:10px;
+  background-size:cover;
+  margin:0px;
+  color:transparent;
+}
+p{
+  font-family: 'Caveat', cursive;
+  color:transparent;
+  font-size:2rem;
+  letter-spacing:5px;
+  margin:0px;
+  background:linear-gradient(to right, #c4c4c4 ,#6a6a6a);
+  -webkit-background-clip: text;
+
+}
+
+body{
+  margin:0;
+  font:normal 75% Arial, Helvetica, sans-serif;
+}
+canvas{
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+#particles-js{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #21213a;
+  background-color: black;
+  //background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
