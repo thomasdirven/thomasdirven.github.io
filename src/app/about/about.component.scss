@@ -1,0 +1,29 @@
+.wrapper-about {
+  margin-top: 30px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text-container {
+  font-family: Glory, sans-serif;
+  max-width: 55%;
+  margin-left: 20px;
+  margin-right: 200px;
+}
+
+.title {
+  font-size: 2.5rem;
+  //color: #00E676;
+  color: whitesmoke;
+  margin-bottom: 5px;
+}
+
+.paragraph {
+  font-weight: 200;
+  font-size: 1.5rem;
+  //color: #6a6a6a;
+}

@@ -12,7 +12,8 @@ export class MainNavComponent implements OnInit {
   isDropDownNavOpen = false;
   innerWidth = window.innerWidth;
   navigationLinks = ['About', 'Experience', 'Education', 'Portfolio', 'Contact'];
-  innerWidthConstant = 1300;
+  innerWidthConstant = 1200;
+  showAbout = false;
 
   constructor() { }
 
@@ -25,11 +26,13 @@ export class MainNavComponent implements OnInit {
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.add("affix");
         }
+        this.showAbout = true;
       } else {
         const elements = document.getElementsByClassName("nav");
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.remove("affix");
         }
+        this.showAbout = false;
       }
     });
   }

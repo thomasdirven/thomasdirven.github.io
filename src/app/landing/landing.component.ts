@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ParticlesConfig} from "./particles-config";
+import {DropDownAboutAnimation, DropDownAnimation} from "../animations";
 
 declare let particlesJS: any;
 
@@ -55,9 +56,12 @@ declare let particlesJS: any;
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  styleUrls: ['./landing.component.scss'],
+  animations: [DropDownAboutAnimation]
 })
 export class LandingComponent implements OnInit {
+
+  @Input() showAbout!: boolean;
 
   constructor() {
   }

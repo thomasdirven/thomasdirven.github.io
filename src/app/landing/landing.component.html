@@ -5,8 +5,28 @@
   <div class="name-on-top">
     <h1>Thomas Dirven</h1>
     <p>Full-stack Developer</p>
-    <p>AI - enthusiast</p>
+    <p>Student AI & Data Engineering</p>
   </div>
+
+  <div *ngIf="showAbout" [@dropDownAbout]
+       id="about-page"
+       style="width: fit-content">
+    <div class="menu-item">
+      <app-about></app-about>
+<!--      <div class="wrapper-about">-->
+<!--        <img src="assets/images/tempProfilePicCropRotateCrop.png"-->
+<!--             alt="picture Thomas Dirven"-->
+<!--             style="border-radius: 50%; width: 200px;">-->
+<!--        <div class="about-text">-->
+<!--          <h1>Who is Thomas Dirven?</h1>-->
+<!--          <p>Eager to learn, always looking for a challenge.</p>-->
+<!--        </div>-->
+<!--      </div>-->
+
+    </div>
+  </div>
+
 </div>
+
 <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
 <!--<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
