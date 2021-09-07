@@ -1,7 +1,7 @@
 <div class="wrapper-about">
   <img src="assets/images/tempProfilePicCropRotateCrop.png"
        alt="picture Thomas Dirven"
-       style="border-radius: 50%; width: 200px; right: 0; top: 0; margin: auto 20px auto 0;">
+       style="border-radius: 50%; width: 200px; right: 0; top: 0; margin: auto 20px auto 80px;">
   <div class="about-text-container">
     <div class="title">Welcome, great to see you here!</div>
     <div class="paragraph">I'm Thomas, a full-stack software developer and a student starting my third year of applied
@@ -29,7 +29,18 @@
       is always willing to help each other and the sharing of ideas that let's innovation flourish.
     </div>
   </div>
-  <div>
-
+  <div class="customButtons">
+    <div>
+      <app-button-outline
+        buttonText="View my projects"
+        [isFilledButton]="false">
+      </app-button-outline>
+    </div>
+    <div>
+      <app-button-outline
+        buttonText="Contact"
+        [isFilledButton]="true">
+      </app-button-outline>
+    </div>
   </div>
 </div>

@@ -80,6 +80,7 @@ export class LandingComponent implements OnInit {
   onResize(event: Event) {
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight;
+    this.mobileMode = this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight;
   }
 
   public invokeParticles(): void {

@@ -10,14 +10,18 @@ import {DropDownAnimation} from "../animations";
 export class MainNavComponent implements OnInit {
 
   isDropDownNavOpen = false;
+  minInnerWidth = 1200;
+  minInnerHeight = 900;
   innerWidth = window.innerWidth;
+  innerHeight = window.innerHeight;
   navigationLinks = ['About', 'Experience', 'Education', 'Portfolio', 'Contact'];
-  innerWidthConstant = 1200;
   showAbout = false;
+  isDesktopUser = true;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
     window.onscroll = (() => {
       if (window.scrollY > 50) {
         const elements = document.getElementsByClassName("nav");
@@ -38,10 +42,12 @@ export class MainNavComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight;
+    this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
   }
 
   toggleActiveClass() {
-    if (this.innerWidth < this.innerWidthConstant) {
+    if (this.innerWidth < this.minInnerWidth) {
       this.isDropDownNavOpen = !this.isDropDownNavOpen;
       document.getElementsByClassName("navTrigger")[0].classList.toggle("active");
       // document.getElementById("mainListDiv")?.classList.toggle("show_list");

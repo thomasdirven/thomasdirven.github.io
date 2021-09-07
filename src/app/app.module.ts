@@ -8,6 +8,8 @@ import { TutorialComponent } from './tutorial/tutorial.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
+import { ScrollDownArrowComponent } from './scroll-down-arrow/scroll-down-arrow.component';
+import { ButtonOutlineComponent } from './button-outline/button-outline.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { AboutComponent } from './about/about.component';
     MainNavComponent,
     TutorialComponent,
     LandingComponent,
-    AboutComponent
+    AboutComponent,
+    ScrollDownArrowComponent,
+    ButtonOutlineComponent
   ],
   imports: [
     BrowserModule,

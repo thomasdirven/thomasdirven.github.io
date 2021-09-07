@@ -3,19 +3,25 @@
   <div id="particles-js"></div>
 
   <div class="wrapper-sub">
-    <div class="name-on-top">
+    <div class="name-on-top"
+          >
       <h1>Thomas Dirven</h1>
       <p>Full-stack Developer</p>
       <p>Student AI & Data Engineering</p>
+      <div *ngIf="!showAbout && !mobileMode"
+           style="position: absolute; margin-top: 280px">
+        <app-scroll-down-arrow></app-scroll-down-arrow>
+      </div>
     </div>
 
-    <div *ngIf="showAbout" [@dropDownAbout]
+    <div *ngIf="showAbout && !mobileMode" [@dropDownAbout]
          class="about-page"
          style="width: fit-content">
       <div class="menu-item">
         <app-about></app-about>
       </div>
     </div>
+
   </div>
 </div>
 

@@ -4,7 +4,7 @@
       <a href="#">Thomas Dirven</a>
     </div>
     <div id="mainListDiv" class="main_list">
-      <ul class="navlinks menu" *ngIf="isDropDownNavOpen || innerWidth > innerWidthConstant" [@dropDownMenu]>
+      <ul class="navlinks menu" *ngIf="isDropDownNavOpen || innerWidth > minInnerWidth" [@dropDownMenu]>
         <li *ngFor="let navigationLink of navigationLinks"
             (click)="toggleActiveClass()"
             class="menu-item">
@@ -23,7 +23,7 @@
 
 <app-landing [showAbout]="showAbout"></app-landing>
 
-<div style="height: 1200px">
+<div *ngIf="isDesktopUser" style="height: 1200px">
   <!-- just to make scrolling effect possible -->
   --
 </div>
