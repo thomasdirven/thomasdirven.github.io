@@ -45,7 +45,7 @@ export const DropDownAboutAnimation = trigger("dropDownAbout", [
   transition(":enter", [
     style({ height: 0, overflow: "hidden" }),
     query(".menu-item", [
-      style({ opacity: 0, transform: "translateY(-350px)" })
+      style({ opacity: 0, transform: "translateY(-450px)" })
     ]),
     sequence([
       animate("400ms ease", style({ height: "*" })),
@@ -65,7 +65,7 @@ export const DropDownAboutAnimation = trigger("dropDownAbout", [
         stagger(50, [
           animate(
             "600ms ease",
-            style({ opacity: 0, transform: "translateY(-350px)" })
+            style({ opacity: 0, transform: "translateY(-450px)" })
           )
         ])
       ]),

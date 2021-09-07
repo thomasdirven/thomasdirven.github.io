@@ -38,6 +38,7 @@ body {
 
 .nav div.logo a:hover {
   color: #00E676;
+  color: #283593;
 }
 
 .nav div.main_list {
@@ -72,10 +73,12 @@ body {
 .nav div.main_list ul li a:hover {
   color: #00E676;
   color: darkgoldenrod;
+  color: #4450a9;
+  //text-shadow: 0px 0px 1px white;
   padding: 0.7rem;
   margin: 0 -0.7rem;
-  border-radius: 5px;
-  background: #1b1b1f;
+  //border-radius: 5px;
+  //background: #1b1b1f;
 }
 
 .container {
@@ -368,6 +371,7 @@ body {
   margin-top: 0;
   background-color: #111;
   border-bottom: 1px solid darkgoldenrod;
+  border-bottom: 1px solid #283593;
   //.navTrigger {
   //  margin: auto;
   //}

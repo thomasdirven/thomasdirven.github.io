@@ -18,8 +18,6 @@ export class MainNavComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.innerWidth = window.innerWidth;
-
     window.onscroll = (() => {
       if (window.scrollY > 50) {
         const elements = document.getElementsByClassName("nav");

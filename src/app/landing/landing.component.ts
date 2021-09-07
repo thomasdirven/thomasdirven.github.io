@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ParticlesConfig} from "./particles-config";
+import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {ParticlesConfig, ParticlesConfigSlow} from "./particles-config";
 import {DropDownAboutAnimation, DropDownAnimation} from "../animations";
 
 declare let particlesJS: any;
@@ -62,16 +62,28 @@ declare let particlesJS: any;
 export class LandingComponent implements OnInit {
 
   @Input() showAbout!: boolean;
+  minInnerWidth = 1200;
+  minInnerHeight = 900;
+  innerWidth = window.innerWidth;
+  innerHeight = window.innerHeight;
+  mobileMode = false;
 
   constructor() {
   }
 
   public ngOnInit(): void {
     this.invokeParticles();
+    this.mobileMode = this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    this.innerWidth = window.innerWidth;
+    this.innerHeight = window.innerHeight;
   }
 
   public invokeParticles(): void {
-    particlesJS('particles-js', ParticlesConfig, function() {});
+    particlesJS('particles-js', ParticlesConfigSlow, function() {});
   }
 
 }

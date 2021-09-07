@@ -1,5 +1,5 @@
 .wrapper-about {
-  margin-top: 30px;
+  margin-top: 45px;
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -13,6 +13,8 @@
   max-width: 55%;
   margin-left: 20px;
   margin-right: 200px;
+  //max-height: 670px;
+  //overflow-y: auto;
 }
 
 .title {
@@ -25,5 +27,6 @@
 .paragraph {
   font-weight: 200;
   font-size: 1.5rem;
+  color: white;
   //color: #6a6a6a;
 }
