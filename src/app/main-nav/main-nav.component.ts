@@ -10,7 +10,7 @@ import {DropDownAnimation} from "../animations";
 export class MainNavComponent implements OnInit {
 
   isDropDownNavOpen = false;
-  minInnerWidth = 1200;
+  minInnerWidth = 1000;
   minInnerHeight = 900;
   innerWidth = window.innerWidth;
   innerHeight = window.innerHeight;

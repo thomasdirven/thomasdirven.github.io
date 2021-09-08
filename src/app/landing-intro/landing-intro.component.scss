@@ -1,0 +1,70 @@
+.wrapper-landing-intro {
+  margin-top: 45px;
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-text-container {
+  font-family: Glory, sans-serif;
+  max-width: 55%;
+  margin-left: 20px;
+  //margin-right: 200px;
+  //max-height: 670px;
+  height: 60vh;
+  overflow: auto;
+}
+
+.customButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  //color: #00E676;
+  color: whitesmoke;
+  margin-bottom: 5px;
+}
+
+.paragraph {
+  text-align: justify;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: white;
+  padding-right: 7px;
+  //color: #6a6a6a;
+}
+
+
+::-webkit-scrollbar-track
+{
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  //border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+::-webkit-scrollbar
+{
+  width: 8px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+::-webkit-scrollbar-thumb
+{
+  //border-radius: 10px;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(190, 55, 55, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover
+{
+  //border-radius: 10px;
+  //-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: rgba(190, 55, 55, 0.36);
+}

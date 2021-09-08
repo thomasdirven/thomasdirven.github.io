@@ -10,6 +10,7 @@ import { LandingComponent } from './landing/landing.component';
 import { AboutComponent } from './about/about.component';
 import { ScrollDownArrowComponent } from './scroll-down-arrow/scroll-down-arrow.component';
 import { ButtonOutlineComponent } from './button-outline/button-outline.component';
+import { LandingIntroComponent } from './landing-intro/landing-intro.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ButtonOutlineComponent } from './button-outline/button-outline.componen
     LandingComponent,
     AboutComponent,
     ScrollDownArrowComponent,
-    ButtonOutlineComponent
+    ButtonOutlineComponent,
+    LandingIntroComponent
   ],
   imports: [
     BrowserModule,

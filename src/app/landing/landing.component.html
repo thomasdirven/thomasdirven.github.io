@@ -8,17 +8,17 @@
       <h1>Thomas Dirven</h1>
       <p>Full-stack Developer</p>
       <p>Student AI & Data Engineering</p>
-      <div *ngIf="!showAbout && !mobileMode"
-           style="position: absolute; margin-top: 280px">
+      <div *ngIf="!showAbout"
+           class="scrollIndicatorArrow">
         <app-scroll-down-arrow></app-scroll-down-arrow>
       </div>
     </div>
 
-    <div *ngIf="showAbout && !mobileMode" [@dropDownAbout]
+    <div *ngIf="showAbout" [@dropDownAbout]
          class="about-page"
          style="width: fit-content">
       <div class="menu-item">
-        <app-about></app-about>
+        <app-landing-intro></app-landing-intro>
       </div>
     </div>
 

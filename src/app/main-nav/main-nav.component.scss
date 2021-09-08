@@ -39,6 +39,7 @@ body {
 .nav div.logo a:hover {
   color: #00E676;
   color: #283593;
+  color: #d02929;
 }
 
 .nav div.main_list {
@@ -63,7 +64,7 @@ body {
 }
 
 .nav div.main_list ul li a {
-  font-family: Roboto, sans-serif;
+  font-family: Glory, sans-serif;
   text-decoration: none;
   color: #fff;
   line-height: 65px;
@@ -74,11 +75,12 @@ body {
   color: #00E676;
   color: darkgoldenrod;
   color: #4450a9;
+  color: #d02929;
   //text-shadow: 0px 0px 1px white;
   padding: 0.7rem;
   margin: 0 -0.7rem;
-  //border-radius: 5px;
-  //background: #1b1b1f;
+  border-radius: 5px;
+  background: #1b1b1f;
 }
 
 .container {
@@ -119,7 +121,7 @@ body {
 //  }
 //}
 
-@media screen and (max-width:1200px) {
+@media screen and (max-width:1000px) {
   .container {
     margin: 0;
   }
@@ -158,7 +160,7 @@ body {
   .nav div.main_list ul li a {
     text-align: center;
     width: 100%;
-    font-size: 3rem;
+    font-size: 2rem;
     padding: 20px;
   }
   .nav div.main_list ul li a:hover {
@@ -372,9 +374,14 @@ body {
   background-color: #111;
   border-bottom: 1px solid darkgoldenrod;
   border-bottom: 1px solid #283593;
+  border-bottom: 1px solid #d02929;
   //.navTrigger {
   //  margin: auto;
   //}
+}
+
+.makeScreenScrollable {
+  height: calc(100vh + 60px);
 }
 
 
@@ -391,5 +398,16 @@ body {
 @media all and (max-width:700px){
   .myP {
     padding:2%;
+  }
+}
+
+@media screen and (min-width: 360px) and (max-width: 420px) {
+  .nav div.logo a {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 20px) and (max-width: 360px) {
+  .nav div.logo a {
+    font-size: 1.5rem;
   }
 }

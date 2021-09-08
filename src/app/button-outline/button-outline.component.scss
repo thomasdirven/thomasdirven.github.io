@@ -17,13 +17,15 @@ app-button-outline {
     display: inline-block;
     position: relative;
     //width: -webkit-fill-available;
-    //width: available;
-    width: fit-content;
+    width: available;
+    //width: fit-content;
+    //max-width: 200px;
     text-align: center;
     height: fit-content;
   }
   .border-btn-background {
     background-color: #d0292912;
+    background-color: rgba(208, 41, 41, 0.12);
   }
   .border-btn__inner {
     //display: inline-block;

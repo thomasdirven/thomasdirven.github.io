@@ -9,7 +9,7 @@ import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 export class ButtonOutlineComponent implements OnInit {
 
   @Input() buttonText!: string;
-  @Input() isFilledButton!: boolean;
+  @Input() isFilledButton = true;
 
   constructor() { }
 
