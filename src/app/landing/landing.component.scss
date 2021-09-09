@@ -89,9 +89,48 @@ p{
   background-color: black;
 }
 
+
+.makeScreenScrollable {
+  z-index: -10;
+  height: calc(100vh + 60px);
+}
+
+
+.wrapper-mobile {
+  position: fixed;
+  z-index: 10;
+  height: fit-content;
+  overflow: scroll;
+}
+
+
+.customButtons {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  //margin: 15px 0 30px;
+}
+
+.fadeAway {
+  display: none;
+}
+
+
 @media screen and (min-width: 592px) and (max-width: 931px) {
   .scrollIndicatorArrow {
     margin-top: 410px
+  }
+}
+@media screen and (max-width: 592px) {
+  .scrollIndicatorArrow {
+    transition: all ease-in-out 1s;
+  }
+  .fadeAway {
+    display: unset;
+    transform: translateY(-180px);
+    opacity: 0;
   }
 }
 @media screen and (min-width: 495px) and (max-width: 592px) {
@@ -106,6 +145,10 @@ p{
   }
   .scrollIndicatorArrow {
     margin-top: 440px
+  }
+  .fadeAway {
+    transform: translateY(-180px);
+    opacity: 0;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 495px) {

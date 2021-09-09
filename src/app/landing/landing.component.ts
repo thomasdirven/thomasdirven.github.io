@@ -1,6 +1,7 @@
 import {Component, HostListener, Input, OnInit} from '@angular/core';
 import {ParticlesConfig, ParticlesConfigSlow} from "./particles-config";
-import {DropDownAboutAnimation, DropDownAnimation} from "../animations";
+import {DropDownAboutAnimation, DropDownAnimation, DropDownLandingButtonsAnimation} from "../animations";
+import {Router} from "@angular/router";
 
 declare let particlesJS: any;
 
@@ -57,30 +58,59 @@ declare let particlesJS: any;
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
-  animations: [DropDownAboutAnimation]
+  animations: [DropDownAboutAnimation, DropDownLandingButtonsAnimation]
 })
 export class LandingComponent implements OnInit {
 
-  @Input() showAbout!: boolean;
-  minInnerWidth = 1200;
-  minInnerHeight = 900;
+  showAbout = false;
+  minInnerWidth = 1000;
+  minInnerHeight = 500;
   innerWidth = window.innerWidth;
   innerHeight = window.innerHeight;
   mobileMode = false;
+  isDesktopUser = true;
 
-  constructor() {
+  constructor(
+    private router: Router,
+    ) {
   }
 
   public ngOnInit(): void {
     this.invokeParticles();
     this.mobileMode = this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight;
+
+    this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
+    window.onscroll = (() => {
+      if (window.scrollY > 50) {
+        const elements = document.getElementsByClassName("nav");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].classList.add("affix");
+        }
+      } else {
+        const elements = document.getElementsByClassName("nav");
+        for (let i = 0; i < elements.length; i++) {
+          elements[i].classList.remove("affix");
+        }
+      }
+    // if (this.isDesktopUser) {
+      if (window.scrollY > 50) {
+
+        this.showAbout = true;
+      } else {
+
+        this.showAbout = false;
+      }
+    // } else {
+        // this.router.navigate(['/about']);
+      // }
+    });
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight;
-    this.mobileMode = this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight;
+    this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
   }
 
   public invokeParticles(): void {

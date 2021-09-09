@@ -3,44 +3,50 @@
   <div id="particles-js"></div>
 
   <div class="wrapper-sub">
-    <div class="name-on-top"
-          >
+    <div class="name-on-top">
       <h1>Thomas Dirven</h1>
       <p>Full-stack Developer</p>
       <p>Student AI & Data Engineering</p>
-      <div *ngIf="!showAbout"
+<!--      <div *ngIf="!showAbout"-->
+<!--           class="scrollIndicatorArrow">-->
+      <div [class.fadeAway] = showAbout
            class="scrollIndicatorArrow">
         <app-scroll-down-arrow></app-scroll-down-arrow>
       </div>
     </div>
 
-    <div *ngIf="showAbout" [@dropDownAbout]
+    <div *ngIf="showAbout && isDesktopUser" [@dropDownAbout]
          class="about-page"
          style="width: fit-content">
       <div class="menu-item">
         <app-landing-intro></app-landing-intro>
       </div>
     </div>
-
+    <div *ngIf="showAbout && !isDesktopUser" [@dropDownLandingButtons]>
+      <div class="customButtons">
+        <div class="menu-item"
+             style="max-width: 230px;">
+          <app-button-outline
+            buttonText="View my projects"
+            [isFilledButton]="false">
+          </app-button-outline>
+        </div>
+        <div class="menu-item">
+          <app-button-outline
+            buttonText="Contact"
+            [isFilledButton]="true">
+          </app-button-outline>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<!--<div *ngIf="mobileMode"-->
-<!--     class="wrapper-mobile">-->
-<!--  <div class="name-on-top">-->
-<!--    <h1>Thomas Dirven</h1>-->
-<!--    <p>Full-stack Developer</p>-->
-<!--    <p>Student AI & Data Engineering</p>-->
-<!--  </div>-->
-
-<!--  <div *ngIf="showAbout" [@dropDownAbout]-->
-<!--       class="about-page"-->
-<!--       style="width: fit-content">-->
-<!--    <div class="menu-item">-->
-<!--      <app-about></app-about>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
+<!--<div *ngIf="isDesktopUser" class="makeScreenScrollable">-->
+<div class="makeScreenScrollable">
+  <!-- just to make scrolling effect possible -->
+  --
+</div>
 
 <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
 <!--<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>-->
