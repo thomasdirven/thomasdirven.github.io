@@ -129,7 +129,8 @@ p{
   }
   .fadeAway {
     display: unset;
-    transform: translateY(-180px);
+    // makes it too slow
+    //transform: translateY(-180px);
     opacity: 0;
   }
 }
@@ -145,10 +146,6 @@ p{
   }
   .scrollIndicatorArrow {
     margin-top: 440px
-  }
-  .fadeAway {
-    transform: translateY(-180px);
-    opacity: 0;
   }
 }
 @media screen and (min-width: 321px) and (max-width: 495px) {

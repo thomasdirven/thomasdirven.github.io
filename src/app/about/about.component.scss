@@ -51,6 +51,10 @@
   margin: auto 20px auto 20px;
 }
 
+.tempMarginDiv {
+  height: 20vh;
+}
+
 
 @media screen and (max-width: 1000px) {
 
@@ -95,6 +99,12 @@
   .customButtons {
     margin: 15px 0 30px;
   }
+
+  .tempMarginDiv {
+    display: none;
+    height: 0;
+  }
+
 }
 
 ::-webkit-scrollbar-track

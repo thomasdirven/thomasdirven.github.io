@@ -37,6 +37,7 @@
 }
 
 .nav div.logo a:hover {
+  cursor: pointer;
   color: #00E676;
   color: #283593;
   color: #d02929;
@@ -63,7 +64,7 @@
   padding-right: 3rem;
 }
 
-.nav div.main_list ul li a {
+.nav div.main_list ul li span {
   font-family: Glory, sans-serif;
   text-decoration: none;
   color: #fff;
@@ -71,16 +72,17 @@
   font-size: 1.5rem;
 }
 
-.nav div.main_list ul li a:hover {
+.nav div.main_list ul li span:hover {
+  cursor: pointer;
   color: #00E676;
   color: darkgoldenrod;
   color: #4450a9;
   color: #d02929;
   //text-shadow: 0px 0px 1px white;
-  padding: 0.7rem;
-  margin: 0 -0.7rem;
-  border-radius: 5px;
-  background: #1b1b1f;
+  //padding: 0.7rem;
+  //margin: 0 -0.7rem;
+  //border-radius: 5px;
+  //background: #1b1b1f;
 }
 
 .container {
@@ -157,13 +159,14 @@
     width: 100%;
     text-align: right;
   }
-  .nav div.main_list ul li a {
+  .nav div.main_list ul li span {
     text-align: center;
     width: 100%;
     font-size: 2rem;
     padding: 20px;
   }
-  .nav div.main_list ul li a:hover {
+  .nav div.main_list ul li span:hover {
+    cursor: pointer;
     padding: 20px;
     margin: 0;
     border: none;

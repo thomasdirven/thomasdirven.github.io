@@ -8,7 +8,7 @@
         <li *ngFor="let navigationLink of navigationLinks"
             (click)="toggleActiveClass()"
             class="menu-item">
-          <a (click)="navigate(navigationLink)">{{navigationLink}}</a>
+          <span (click)="navigate(navigationLink)">{{navigationLink}}</span>
         </li>
       </ul>
     </div>
