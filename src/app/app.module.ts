@@ -11,6 +11,9 @@ import { AboutComponent } from './about/about.component';
 import { ScrollDownArrowComponent } from './scroll-down-arrow/scroll-down-arrow.component';
 import { ButtonOutlineComponent } from './button-outline/button-outline.component';
 import { LandingIntroComponent } from './landing-intro/landing-intro.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { ProjectsComponent } from './projects/projects.component';
+import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { LandingIntroComponent } from './landing-intro/landing-intro.component';
     AboutComponent,
     ScrollDownArrowComponent,
     ButtonOutlineComponent,
-    LandingIntroComponent
+    LandingIntroComponent,
+    ProjectsComponent,
+    ParticlesBackgroundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    YouTubePlayerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

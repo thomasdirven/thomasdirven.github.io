@@ -1,0 +1,21 @@
+.wrapper {
+  width: 100%;
+}
+
+.text {
+  margin: 20px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.volvo-video-demo-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+youtube-player {
+  margin: 20px;
+}
