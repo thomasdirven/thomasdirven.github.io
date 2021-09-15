@@ -15,6 +15,7 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ProjectsComponent } from './projects/projects.component';
 import { ExperienceComponent } from './experience/experience.component';
 import { EducationComponent } from './education/education.component';
+import { ContactComponent } from './contact/contact.component';
 // import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { EducationComponent } from './education/education.component';
     ProjectsComponent,
     ExperienceComponent,
     EducationComponent,
+    ContactComponent,
     // ParticlesBackgroundComponent
   ],
   imports: [

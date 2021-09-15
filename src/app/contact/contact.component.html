@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="contact">
+<!--    <div *ngIf="showButtons" [@dropDownLandingButtons]>-->
+      <div class="customButtons">
+        <div class="menu-item"
+             (click)="navigate('github')">
+          <app-button-outline
+            buttonText='<i class="fa fa-github"></i> &nbsp;View Github'
+            [isFilledButton]="true">
+          </app-button-outline>
+        </div>
+        <div class="menu-item">
+          <a href="mailto:thomas.dirven@hotmail.com">
+            <app-button-outline
+              buttonText='<i class="fa fa-envelope"></i> &nbsp;Email me'
+              [isFilledButton]="true">
+            </app-button-outline>
+          </a>
+        </div>
+        <div class="menu-item"
+             (click)="navigate('linkedIn')">
+          <app-button-outline
+            buttonText='<i class="fa fa-linkedin-square"></i> &nbsp;Coming Soon'
+            [isFilledButton]="false">
+          </app-button-outline>
+        </div>
+      </div>
+  </div>
+</div>
