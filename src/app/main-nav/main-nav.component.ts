@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, HostListener, OnInit} from '@angular/core';
 import {DropDownAnimation} from "../animations";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {LandingIntroService} from "../services/landing-intro.service";
 
 @Component({
@@ -38,12 +38,17 @@ export class MainNavComponent implements OnInit {
     }
   }
 
-  @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
+  @HostListener('window:resize')
+  onResize() {
     this.innerWidth = window.innerWidth;
-  //   this.innerHeight = window.innerHeight;
-  //   this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
   }
+
+  // @HostListener('window:resize', ['$event'])
+  // onResize(event: Event) {
+  //   this.innerWidth = window.innerWidth;
+  // //   this.innerHeight = window.innerHeight;
+  // //   this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
+  // }
 
   toggleActiveClass() {
     if (this.innerWidth < this.minInnerWidth) {

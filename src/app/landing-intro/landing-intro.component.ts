@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {ScreenSizeService} from "../services/screen-size.service";
 import {LandingIntroService} from "../services/landing-intro.service";
 
 @Component({
