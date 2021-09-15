@@ -31,7 +31,8 @@ export class MainNavComponent implements OnInit {
     // this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
     // todo
     const currentRoute = window.location.href;
-    if (currentRoute.endsWith('.me/') || currentRoute.endsWith('4200/')) {
+    if (currentRoute.indexOf('about') == -1 &&
+        currentRoute.indexOf('portfolio') == -1) {
       this.addWindowOnScrollNavBarAnimation();
     } else {
       console.log(window.location.href);
