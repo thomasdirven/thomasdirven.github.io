@@ -1,7 +1,7 @@
 .wrapper-landing-intro {
   //margin-top: 45px;
   margin-top: 25px;
-  height: fit-content;
+  height: 60vh;
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -61,7 +61,7 @@
 
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 995px) {
 
 
   .profile-picture {

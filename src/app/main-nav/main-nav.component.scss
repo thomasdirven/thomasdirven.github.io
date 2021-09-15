@@ -14,16 +14,16 @@
 /* Navbar section */
 
 
-.affix {
-  margin-top: 0;
-  background-color: #111;
-  //border-bottom: 1px solid darkgoldenrod;
-  //border-bottom: 1px solid #283593;
-  border-bottom: 1px solid #d02929;
-  //.navTrigger {
-  //  margin: auto;
-  //}
-}
+//.affix {
+//  margin-top: 0;
+//  background-color: #111;
+//  //border-bottom: 1px solid darkgoldenrod;
+//  //border-bottom: 1px solid #283593;
+//  border-bottom: 1px solid #d02929;
+//  //.navTrigger {
+//  //  margin: auto;
+//  //}
+//}
 
 .nav {
   z-index: 99;
@@ -32,10 +32,12 @@
   position: fixed;
   line-height: 65px;
   text-align: center;
+  // todo - weird overflow-x when switching to mobile in chrome
+  //overflow-x: hidden;
 }
 
 .nav div.logo {
-  font-family: 'Righteous', cursive;
+  font-family: 'Righteous', sans-serif;
   float: left;
   width: auto;
   height: auto;

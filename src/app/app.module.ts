@@ -13,7 +13,9 @@ import { ButtonOutlineComponent } from './button-outline/button-outline.componen
 import { LandingIntroComponent } from './landing-intro/landing-intro.component';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { ProjectsComponent } from './projects/projects.component';
-import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { EducationComponent } from './education/education.component';
+// import { ParticlesBackgroundComponent } from './particles-background/particles-background.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ParticlesBackgroundComponent } from './particles-background/particles-b
     ButtonOutlineComponent,
     LandingIntroComponent,
     ProjectsComponent,
-    ParticlesBackgroundComponent
+    ExperienceComponent,
+    EducationComponent,
+    // ParticlesBackgroundComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, HostListener, OnInit} from '@angular/core';
 import {DropDownAnimation} from "../animations";
 import {ActivatedRoute, Router} from "@angular/router";
+import {LandingIntroService} from "../services/landing-intro.service";
 
 @Component({
   selector: 'app-main-nav',
@@ -11,6 +12,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class MainNavComponent implements OnInit {
 
+  // todo - remove dirty reload because there must be some kind of memory leak
+  // no time to find it now
+  timesNavigated = 0;
+
   isDropDownNavOpen = false;
   minInnerWidth = 1000;
   // minInnerHeight = 900;
@@ -20,12 +25,13 @@ export class MainNavComponent implements OnInit {
   // showAbout = false;
   // isDesktopUser = true;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private landingIntroService: LandingIntroService) { }
 
   ngOnInit(): void {
     // this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
+    // todo
     const currentRoute = window.location.href;
-    if (currentRoute.endsWith('.me') || currentRoute.endsWith('4200')) {
+    if (currentRoute.endsWith('.me/') || currentRoute.endsWith('4200/')) {
       this.addWindowOnScrollNavBarAnimation();
     } else {
       console.log(window.location.href);
@@ -49,12 +55,17 @@ export class MainNavComponent implements OnInit {
 
   navigate(navigationLink: string) {
     this.removeWindowOnScrollNavBarAnimation();
+    this.timesNavigated += 1;
+    this.landingIntroService.setShowAbout(false);
     switch (navigationLink) {
       case "About":
         this.router.navigate(['/about']);
         break;
       case "Experience":
         this.router.navigate(['/experience']);
+        break;
+      case "Education":
+        this.router.navigate(['/education']);
         break;
       case "Portfolio":
         this.router.navigate(['/portfolio']);
@@ -67,6 +78,12 @@ export class MainNavComponent implements OnInit {
         this.router.navigate(['']);
         break;
     }
+    if (this.timesNavigated > 7) {
+      setTimeout(() => {
+        console.log("reload");
+        window.location.reload();
+      }, 50);
+    }
   }
 
   addWindowOnScrollNavBarAnimation() {
@@ -76,18 +93,21 @@ export class MainNavComponent implements OnInit {
       elements[i].classList.remove("affix");
     }
     window.onscroll = (() => {
-      // console.log("scrolling")
-      if (window.scrollY > 50) {
+      // console.log("scrolling");
+      if (window.scrollY > 30) {
         const elements = document.getElementsByClassName("nav");
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.add("affix");
         }
+        // todo - fix mess
+        this.landingIntroService.setShowAbout(true);
       } else {
         const elements = document.getElementsByClassName("nav");
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.remove("affix");
         }
       }
+      this.setShowAboutForLandingComponent();
     });
   }
 
@@ -96,6 +116,17 @@ export class MainNavComponent implements OnInit {
     const elements = document.getElementsByClassName("nav");
     for (let i = 0; i < elements.length; i++) {
       elements[i].classList.add("affix");
+    }
+  }
+
+  setShowAboutForLandingComponent() {
+    if (window.scrollY > 30) {
+      // console.log("main nav" + true);
+      this.landingIntroService.setShowAbout(true);
+      // this.showAbout = true;
+    } else {
+      this.landingIntroService.setShowAbout(false);
+      // this.showAbout = false;
     }
   }
 }
