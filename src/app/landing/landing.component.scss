@@ -115,6 +115,8 @@ p{
 
 .fadeAway {
   display: none;
+  // todo - arrow still overlays button
+  z-index: -1;
 }
 
 

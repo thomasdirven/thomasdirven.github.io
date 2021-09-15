@@ -25,13 +25,15 @@
     <div *ngIf="showAbout && !isDesktopUser" [@dropDownLandingButtons]>
       <div class="customButtons">
         <div class="menu-item"
-             style="max-width: 230px;">
+             style="max-width: 230px;"
+             (click)="navigate('portfolio')">
           <app-button-outline
             buttonText="View my projects"
             [isFilledButton]="false">
           </app-button-outline>
         </div>
-        <div class="menu-item">
+        <div class="menu-item"
+             (click)="navigate('contact')">
           <app-button-outline
             buttonText="Contact"
             [isFilledButton]="true">

@@ -1,6 +1,8 @@
+<div class="tempMarginDiv">&nbsp;</div>
 <div class="wrapper-landing-intro">
   <img src="assets/images/tempProfilePicCropRotateCrop.png"
        alt="picture Thomas Dirven"
+       id="profile-picture-about"
        class="profile-picture">
   <div class="about-text-container">
     <div class="title">Welcome, great to see you here!</div>
@@ -10,9 +12,19 @@
       Data Engineering.
       <br>
       <br>
+      <small><em>
+        DISCLAIMER: This website is a work in progress.
+        <sup class="disclaimerLink"
+             (click)="goToDisclaimer()">
+          1
+        </sup>
+      </em></small>
+      <br>
+      <br>
       I had a wonderful summer; I just finished my full-stack developer student job at Volvo Cars Ghent. There I had the
       opportunity to create an entirely new platform that allows the business to visualize the production lines of all
-      the Volvo Cars factories around the globe (China, Sweden, US, Belgium). Furthermore, these visualizations had to be
+      the Volvo Cars factories around the globe (China, Sweden, US, Belgium). Furthermore, these visualizations had to
+      be
       easily configurable by the business in a way that allows them to make changes to their visualizations without the
       need for the IT-department. All this was successfully done within the 9 week period I worked there.
       <br>
@@ -27,16 +39,37 @@
       I believe good software development is all about collaboration and communication. When talented people work
       together as a team anything can be achieved. What I love most about the IT-sector is the fantastic community that
       is always willing to help each other and the sharing of ideas that let's innovation flourish.
+      <br>
+      <br>
+      <span id="workInProgressDisclaimer">
+      <sup>1</sup> Ownership is extremely important to me, if I do something I want to make other people happy with the
+      end result and I want to be proud of it. I don't like unfinished products, it just doesn't feel right. During the
+      second semester of school this year I was working hard to deliver a great support ticket system for Actemium. Then
+      I really wanted to try and win the project finale with my team and we did. Right after that I started working at
+      Volvo Cars Ghent, the project I got there was such a nice opportunity that I decided it was best to spend all my
+      time on that project since I only had 9 weeks to learn new things there and deliver a useful product. Because of
+      the hard work I put into that project I was always able to ask for help from the senior developers and I was lucky
+      to be able to learn many new things from them. When my endeavour at Volvo Cars was finished I only had a few days
+      before I left on a long overdue travel journey. Taking some time off and doing something else you love doing is
+      extremely important. It allows you to experience new things and meet new people and that keeps you motivated and
+      creative.
+      This website is already a great portal to view some of my work and to get in touch with me. But this website has
+      not gotten the love and attention that it deserves, at least not yet. So please look around but definitely come
+      back later to see how it has improved.
+      </span>
     </div>
   </div>
   <div class="customButtons">
-    <div style="max-width: 230px;">
+    <div class="menu-item"
+         style="max-width: 230px;"
+         (click)="navigate('portfolio')">
       <app-button-outline
         buttonText="View my projects"
         [isFilledButton]="false">
       </app-button-outline>
     </div>
-    <div>
+    <div class="menu-item"
+         (click)="navigate('contact')">
       <app-button-outline
         buttonText="Contact"
         [isFilledButton]="true">
@@ -44,4 +77,3 @@
     </div>
   </div>
 </div>
-

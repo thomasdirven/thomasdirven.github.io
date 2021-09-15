@@ -1,5 +1,6 @@
 .wrapper-landing-intro {
-  margin-top: 45px;
+  //margin-top: 45px;
+  margin-top: 25px;
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -50,6 +51,15 @@
   margin: auto 20px auto 20px;
 }
 
+.disclaimerLink {
+  text-decoration: underline;
+}
+
+.disclaimerLink:hover {
+  cursor: pointer;
+}
+
+
 
 @media screen and (max-width: 1000px) {
 
@@ -66,7 +76,7 @@
   .wrapper-landing-intro {
     margin-top: 0;
     //height: fit-content;
-    width: 100vw;
+    width: 100%;
     //display: flex;
     flex-direction: column;
     align-items: center;

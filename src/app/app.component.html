@@ -1,6 +1,12 @@
 <app-main-nav></app-main-nav>
 
-<router-outlet></router-outlet>
+<!-- todo - fix transitions scrollbar -->
+<div [@triggerName]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
+
+
+<!--<router-outlet></router-outlet>-->
 <!--<div class="wrapper-particles-bg">-->
 <!--  <app-particles-background></app-particles-background>-->
 <!--</div>-->

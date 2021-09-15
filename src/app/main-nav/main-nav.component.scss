@@ -13,6 +13,18 @@
 
 /* Navbar section */
 
+
+.affix {
+  margin-top: 0;
+  background-color: #111;
+  //border-bottom: 1px solid darkgoldenrod;
+  //border-bottom: 1px solid #283593;
+  border-bottom: 1px solid #d02929;
+  //.navTrigger {
+  //  margin: auto;
+  //}
+}
+
 .nav {
   z-index: 99;
   width: 100%;
@@ -38,9 +50,8 @@
 
 .nav div.logo a:hover {
   cursor: pointer;
-  color: #00E676;
-  color: #283593;
-  color: #d02929;
+  //color: #d02929;
+  color: rgba(208, 41, 41, 0.65);
 }
 
 .nav div.main_list {
@@ -74,9 +85,9 @@
 
 .nav div.main_list ul li span:hover {
   cursor: pointer;
-  color: #00E676;
-  color: darkgoldenrod;
-  color: #4450a9;
+  //color: #00E676;
+  //color: darkgoldenrod;
+  //color: #4450a9;
   color: #d02929;
   //text-shadow: 0px 0px 1px white;
   //padding: 0.7rem;
@@ -375,8 +386,8 @@
 .affix {
   margin-top: 0;
   background-color: #111;
-  border-bottom: 1px solid darkgoldenrod;
-  border-bottom: 1px solid #283593;
+  //border-bottom: 1px solid darkgoldenrod;
+  //border-bottom: 1px solid #283593;
   border-bottom: 1px solid #d02929;
   //.navTrigger {
   //  margin: auto;

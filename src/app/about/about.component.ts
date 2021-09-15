@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from "@angular/router";
+import {ScreenSizeService} from "../services/screen-size.service";
 
 // left: 37, up: 38, right: 39, down: 40,
 // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
@@ -56,7 +58,8 @@ function enableScroll() {
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private screenSizeService: ScreenSizeService) { }
 
   ngOnInit(): void {
     // disableScroll();
@@ -69,5 +72,19 @@ export class AboutComponent implements OnInit {
     // setTimeout(() => enableScroll(), 3000);
   }
 
+  goToDisclaimer() {
+    document.getElementById("workInProgressDisclaimer")?.scrollIntoView();
+  }
+
+  // todo - place this logic in service
+  navigate(routeName: string) {
+    if (this.screenSizeService.getIsMobileScreen()) {
+      setTimeout(() => {
+        this.router.navigate([routeName]);
+      }, 600);
+    } else {
+      this.router.navigate([routeName]);
+    }
+  }
 
 }

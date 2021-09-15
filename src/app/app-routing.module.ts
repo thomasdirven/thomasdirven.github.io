@@ -8,17 +8,29 @@ const routes: Routes = [
   {
     path: '',
     component: LandingComponent,
-    data: { title: 'Thomas Dirven' }
+    data:
+      {
+        title: 'Thomas Dirven',
+        animationState: 'LandingComponent'
+      }
   },
   {
     path: 'about',
     component: AboutComponent,
-    data: { title: 'About Thomas Dirven' }
+    data:
+      {
+        title: 'About Thomas Dirven',
+        animationState: 'AboutComponent'
+      }
   },
   {
     path: 'portfolio',
     component: ProjectsComponent,
-    data: { title: 'Portfolio Thomas Dirven' }
+    data:
+      {
+        title: 'Portfolio Thomas Dirven',
+        animationState: 'ProjectsComponent'
+      }
   },
   {
     path: '**',

@@ -1,7 +1,8 @@
-import {Component, HostListener, Input, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
 import {ParticlesConfig, ParticlesConfigSlow} from "./particles-config";
 import {DropDownAboutAnimation, DropDownAnimation, DropDownLandingButtonsAnimation} from "../animations";
 import {Router} from "@angular/router";
+import {ScreenSizeService} from "../services/screen-size.service";
 
 declare let particlesJS: any;
 
@@ -60,7 +61,7 @@ declare let particlesJS: any;
   styleUrls: ['./landing.component.scss'],
   animations: [DropDownAboutAnimation, DropDownLandingButtonsAnimation]
 })
-export class LandingComponent implements OnInit {
+export class LandingComponent implements OnInit, OnDestroy {
 
   showAbout = false;
   minInnerWidth = 1000;
@@ -72,6 +73,7 @@ export class LandingComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private screenSizeService: ScreenSizeService
     ) {
   }
 
@@ -80,6 +82,7 @@ export class LandingComponent implements OnInit {
     this.mobileMode = this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight;
 
     this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
+
     window.onscroll = (() => {
       if (window.scrollY > 50) {
         const elements = document.getElementsByClassName("nav");
@@ -94,10 +97,8 @@ export class LandingComponent implements OnInit {
       }
     // if (this.isDesktopUser) {
       if (window.scrollY > 50) {
-
         this.showAbout = true;
       } else {
-
         this.showAbout = false;
       }
     // } else {
@@ -105,6 +106,8 @@ export class LandingComponent implements OnInit {
       // }
     });
   }
+
+
 
   @HostListener('window:resize', ['$event'])
   onResize(event: Event) {
@@ -115,6 +118,25 @@ export class LandingComponent implements OnInit {
 
   public invokeParticles(): void {
     particlesJS('particles-js', ParticlesConfigSlow, function() {});
+  }
+
+  ngOnDestroy(): void {
+    window.onscroll = (() => {});
+    const elements = document.getElementsByClassName("nav");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].classList.add("affix");
+    }
+  }
+
+  // todo - place this logic in service
+  navigate(routeName: string) {
+    if (this.screenSizeService.getIsMobileScreen()) {
+      setTimeout(() => {
+        this.router.navigate([routeName]);
+      }, 600);
+    } else {
+      this.router.navigate([routeName]);
+    }
   }
 
 }

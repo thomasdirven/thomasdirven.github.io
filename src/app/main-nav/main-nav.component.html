@@ -1,7 +1,7 @@
-<nav class="nav">
+<nav class="nav affix">
   <div class="container">
     <div class="logo">
-      <a href="#">Thomas Dirven</a>
+      <a (click)="navigate('')">Thomas Dirven</a>
     </div>
     <div id="mainListDiv" class="main_list">
       <ul class="navlinks menu" *ngIf="isDropDownNavOpen || innerWidth > minInnerWidth" [@dropDownMenu]>
