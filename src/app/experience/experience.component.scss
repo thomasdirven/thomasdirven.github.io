@@ -1,0 +1,68 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education {
+  font-family: Glory, sans-serif;
+  text-align: center;
+  width: 60%;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 3rem;
+  color: rgba(245, 245, 245, 0.75);
+}
+
+.subtitle {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: transparent;
+  background:linear-gradient(to right, #c4c4c4 ,#6a6a6a);
+  -webkit-background-clip: text;
+}
+
+.period {
+  margin: 20px 0;
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+.info {
+  font-size: 1.2rem;
+  font-weight: lighter;
+  color: rgba(245, 245, 245, 0.7);
+}
+
+.location span {
+  font-weight: normal;
+  color: grey;
+}
+
+@media screen and (max-width: 592px) {
+
+  .education {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  .location {
+    font-size: 1.1rem;
+  }
+
+  .info {
+    font-size: 1rem;
+  }
+}
