@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import {LandingComponent} from "./landing/landing.component";
 import {AboutComponent} from "./about/about.component";
 import {ProjectsComponent} from "./projects/projects.component";
+import {ExperienceComponent} from "./experience/experience.component";
+import {EducationComponent} from "./education/education.component";
 
 const routes: Routes = [
   {
@@ -21,6 +23,24 @@ const routes: Routes = [
       {
         title: 'About Thomas Dirven',
         animationState: 'AboutComponent'
+      }
+  },
+  {
+    path: 'experience',
+    component: ExperienceComponent,
+    data:
+      {
+        title: 'Experience Thomas Dirven',
+        animationState: 'ExperienceComponent'
+      }
+  },
+  {
+    path: 'education',
+    component: EducationComponent,
+    data:
+      {
+        title: 'Education Thomas Dirven',
+        animationState: 'EducationComponent'
       }
   },
   {

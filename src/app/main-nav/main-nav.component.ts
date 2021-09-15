@@ -32,7 +32,10 @@ export class MainNavComponent implements OnInit {
     // todo
     const currentRoute = window.location.href;
     if (currentRoute.indexOf('about') == -1 &&
-        currentRoute.indexOf('portfolio') == -1) {
+      currentRoute.indexOf('experience') == -1 &&
+      currentRoute.indexOf('education') == -1 &&
+      currentRoute.indexOf('portfolio') == -1 &&
+      currentRoute.indexOf('contact') == -1) {
       this.addWindowOnScrollNavBarAnimation();
     } else {
       console.log(window.location.href);
