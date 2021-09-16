@@ -1,30 +1,75 @@
 <div class="wrapper">
-<div style="height: 20vh"></div>
+  <div class="tempMarginDiv"></div>
 
-<div class="text">This whole site is a work in progress, come back later to see how it has changed! :)</div>
+  <div class="text">
+    <em>
+      DISCLAIMER: This website is a work in progress.
+    </em>
+    <span class="disclaimerLink"
+          (click)="goToDisclaimer()">
+      <sup>1</sup>
+    </span>
+    <br>
+    <br>
+    My school projects (Actemium Support Ticket System and Angular Travel App with Google Maps and Geocode API) can be
+    found on my github. I will make a video about these applications as soon as I can. A short article about these
+    projects will follow as well.
+    <br>
+    <div class="viewGithubCustomButton">
+      <a href="https://github.com/thomasdirven" target="_blank">
+        <app-button-outline
+          buttonText='<i class="fa fa-github"></i> &nbsp;View Github'
+          [isFilledButton]="true">
+        </app-button-outline>
+      </a>
+    </div>
+    <br>
+    Watch the demo videos of the visualization application I made during my 9 weeks as a full stack developer at Volvo
+    Cars Ghent.
+    <br>
+    Short demo (left/ top) or longer demo (right/ bottom).
+  </div>
 
-<div class="text">Watch my short (left) or longer (right) demo video of the visualization application I made during my 9 weeks full stack developer job at Volvo Cars Ghent.</div>
+  <div *ngIf="window.innerWidth > 1000; else smallPlayers">
+    <div class="volvo-video-demo-container">
+      <!-- Volvo - Ultra Short Demo -->
+      <!-- https://youtu.com/CMZ9SvXd4AE -->
+      <youtube-player
+        videoId="CMZ9SvXd4AE"
+        suggestedQuality="highres"
+        [height]="500"
+        [width]="800">
+      </youtube-player>
 
-<div class="volvo-video-demo-container">
-  <!-- Volvo - Ultra Short Demo -->
-  <!-- https://youtu.be/CMZ9SvXd4AE -->
+      <!-- Volvo - Longer Demo -->
+      <!-- https://youtu.com/CHJOCWmk_ow -->
+      <youtube-player
+        videoId="CHJOCWmk_ow"
+        suggestedQuality="highres"
+        [height]="500"
+        [width]="800">
+      </youtube-player>
+    </div>
+  </div>
+  <ng-template #smallPlayers>
+    <div class="volvo-video-demo-container">
+      <!-- Volvo - Ultra Short Demo -->
+      <!-- https://youtu.be/CMZ9SvXd4AE -->
+      <youtube-player
+        videoId="CMZ9SvXd4AE"
+        suggestedQuality="highres"
+        [height]="200"
+        [width]="310">
+      </youtube-player>
 
-  <youtube-player
-    videoId="CMZ9SvXd4AE"
-    suggestedQuality="highres"
-    [height]="200"
-    [width]="300">
-  </youtube-player>
-
-
-  <!-- Volvo - Longer Demo -->
-  <!-- https://youtu.be/CHJOCWmk_ow -->
-
-  <youtube-player
-    videoId="CHJOCWmk_ow"
-    suggestedQuality="highres"
-    [height]="200"
-    [width]="300">
-  </youtube-player>
-</div>
+      <!-- Volvo - Longer Demo -->
+      <!-- https://youtu.be/CHJOCWmk_ow -->
+      <youtube-player
+        videoId="CHJOCWmk_ow"
+        suggestedQuality="highres"
+        [height]="200"
+        [width]="310">
+      </youtube-player>
+    </div>
+  </ng-template>
 </div>

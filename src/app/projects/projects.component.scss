@@ -1,11 +1,26 @@
 .wrapper {
-  width: 100%;
+
+}
+
+.tempMarginDiv {
+  height: 10vh;
+}
+
+.disclaimerLink {
+  text-decoration: underline;
+}
+
+.disclaimerLink:hover {
+  cursor: pointer;
 }
 
 .text {
-  margin: 20px;
-  font-size: 2rem;
-  text-align: center;
+  max-width: 1500px;
+  margin: auto;
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  color: whitesmoke;
+  text-align: left;
 }
 
 .volvo-video-demo-container {
@@ -16,6 +31,22 @@
   align-items: center;
 }
 
-youtube-player {
-  margin: 20px;
+//.youtube-player-wrapper {
+//  margin: 10px 15px;
+//}
+
+.viewGithubCustomButton {
+  width: fit-content;
+  //margin: 0px -10px;
+  margin: 10px auto;
+}
+
+
+@media screen and (max-width: 592px) {
+
+  .text {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
 }

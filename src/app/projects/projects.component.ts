@@ -1,4 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-projects',
@@ -7,7 +8,11 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  window = window;
+
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
   }
@@ -15,4 +20,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
   }
 
+  goToDisclaimer() {
+    this.router.navigate(['/about']);
+  }
 }
