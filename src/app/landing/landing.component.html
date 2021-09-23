@@ -4,9 +4,13 @@
 
   <div class="wrapper-sub">
     <div class="name-on-top">
-      <h1>Thomas Dirven</h1>
-      <p>Full-stack Developer</p>
-      <p>Student AI & Data Engineering</p>
+      <div class="name-title"
+           [class.name-title-animation]="!((showAbout && isDesktopUser))"
+           [class.name-title-static]="(showAbout && isDesktopUser)">
+        Thomas Dirven
+      </div>
+      <div class="landing-subtitle">Full-stack Developer</div>
+      <div class="landing-subtitle">Student AI & Data Engineering</div>
 <!--      <div *ngIf="!showAbout"-->
 <!--           class="scrollIndicatorArrow">-->
       <div [class.fadeAway] = showAbout

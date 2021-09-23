@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 import {LandingIntroService} from "../services/landing-intro.service";
 
 declare let particlesJS: any;
-console.log(particlesJS);
+// console.log(particlesJS);
 
 @Component({
   selector: 'app-landing',
@@ -16,6 +16,7 @@ console.log(particlesJS);
 export class LandingComponent implements OnInit, OnDestroy {
 
   showAbout = false;
+  // stopAnimation = false;
 
   minInnerWidth = 1000;
   minInnerHeight = 500;
@@ -39,7 +40,14 @@ export class LandingComponent implements OnInit, OnDestroy {
 
     this.landingIntroService.getShowAbout().subscribe(value => {
       this.showAbout = value;
-      console.log("showAbout" + value);
+      // console.log("showAbout" + value);
+      // todo - prop not gonna do it, to turn off animation
+      // if (!value) {
+      //   this.stopAnimation = false;
+      //   setTimeout(() => {
+      //     this.stopAnimation = true;
+      //   }, 8000);
+      // }
     });
 
     // window.onscroll = (() => {
@@ -69,20 +77,20 @@ export class LandingComponent implements OnInit, OnDestroy {
 
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: Event) {
+  onResize(/*event: Event*/) {
     this.innerWidth = window.innerWidth;
     this.innerHeight = window.innerHeight;
     const previousSize = this.isDesktopUser;
     this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
     // todo - dirty reload - mobile screen scrolls left and right
-    if(previousSize != this.isDesktopUser) {
+    if (previousSize != this.isDesktopUser) {
       // window.location.reload();
     }
   }
 
   public invokeParticles(): void {
     particlesJS('particles-js', ParticlesConfigSlow, function() {});
-    console.log(particlesJS);
+    // console.log(particlesJS);
   }
 
   ngOnDestroy(): void {
