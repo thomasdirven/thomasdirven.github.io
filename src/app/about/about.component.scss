@@ -4,7 +4,7 @@
 }
 
 .wrapper-landing-intro {
-  margin-top: 45px;
+  margin-top: 5vh;
   height: fit-content;
   width: fit-content;
   display: flex;
@@ -20,7 +20,7 @@
   margin-left: 20px;
   //margin-right: 200px;
   //max-height: 670px;
-  height: 75vh;
+  height: calc(85vh - 75px);
   overflow: auto;
 }
 

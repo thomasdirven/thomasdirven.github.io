@@ -105,7 +105,7 @@ export class MainNavComponent implements OnInit {
   }
 
   addWindowOnScrollNavBarAnimation() {
-    window.onscroll = (() => {});
+    // window.onscroll = (() => {});
     const elements = document.getElementsByClassName("nav");
     for (let i = 0; i < elements.length; i++) {
       elements[i].classList.remove("affix");
@@ -114,16 +114,18 @@ export class MainNavComponent implements OnInit {
       // console.log("scrolling");
       if (window.scrollY > 30) {
         const elements = document.getElementsByClassName("nav");
+        this.landingIntroService.setShowAbout(true);
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.add("affix");
         }
-        this.landingIntroService.setShowAbout(true);
       } else {
         const elements = document.getElementsByClassName("nav");
-        for (let i = 0; i < elements.length; i++) {
-          elements[i].classList.remove("affix");
-        }
         this.landingIntroService.setShowAbout(false);
+        // setTimeout(() => {
+          for (let i = 0; i < elements.length; i++) {
+            elements[i].classList.remove("affix");
+          }
+        // }, 900);
       }
       // this.setShowAboutForLandingComponent();
     });
