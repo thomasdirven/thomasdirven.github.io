@@ -25,7 +25,10 @@ export class MainNavComponent implements OnInit {
   // showAbout = false;
   // isDesktopUser = true;
 
-  constructor(private router: Router, private landingIntroService: LandingIntroService) { }
+  constructor(
+    private router: Router,
+    private landingIntroService: LandingIntroService
+  ) { }
 
   ngOnInit(): void {
     // this.isDesktopUser = !(this.innerWidth < this.minInnerWidth || this.innerHeight < this.minInnerHeight);
