@@ -63,26 +63,32 @@ export class MainNavComponent implements OnInit {
   }
 
   navigate(navigationLink: string) {
-    this.removeWindowOnScrollNavBarAnimation();
     this.timesNavigated += 1;
     this.landingIntroService.setShowAbout(false);
     switch (navigationLink) {
       case "About":
+        this.removeWindowOnScrollNavBarAnimation();
         this.router.navigate(['/about']);
         break;
       case "Experience":
+        this.removeWindowOnScrollNavBarAnimation();
         this.router.navigate(['/experience']);
         break;
       case "Education":
+        this.removeWindowOnScrollNavBarAnimation();
         this.router.navigate(['/education']);
         break;
       case "Portfolio":
+        this.removeWindowOnScrollNavBarAnimation();
         this.router.navigate(['/portfolio']);
         break;
       case "Contact":
+        this.removeWindowOnScrollNavBarAnimation();
         this.router.navigate(['/contact']);
         break;
       default:
+        window.scrollTo({top: 0});
+        this.landingIntroService.setShowAbout(false);
         this.addWindowOnScrollNavBarAnimation();
         this.router.navigate(['']);
         break;
@@ -108,15 +114,15 @@ export class MainNavComponent implements OnInit {
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.add("affix");
         }
-        // todo - fix mess
         this.landingIntroService.setShowAbout(true);
       } else {
         const elements = document.getElementsByClassName("nav");
         for (let i = 0; i < elements.length; i++) {
           elements[i].classList.remove("affix");
         }
+        this.landingIntroService.setShowAbout(false);
       }
-      this.setShowAboutForLandingComponent();
+      // this.setShowAboutForLandingComponent();
     });
   }
 
